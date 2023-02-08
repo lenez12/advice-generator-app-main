@@ -1,0 +1,48 @@
+@use './sass/variables' as var;
+body {
+    background-color: var.$dark-blue;
+    min-height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var.$font-size;
+}
+
+.main {
+    .main__card {
+        background-color: var.$dark-grayish-blue;
+        padding: 2rem 3rem 4rem;
+        text-align: center;
+        position: relative;
+        margin: 0 1rem;
+        border-radius: 10px;
+        max-width: 500px;
+        .main__card-title {
+            color: var.$neon-green;
+            font-size: 14px;
+        }
+        .main__card-advice {
+            color: var.$light-cyan;
+            font-size: 28px;
+            line-height: 40px;
+        }
+
+        .main__card-button {
+            position: absolute;
+            left: 45%;
+            // right: 40%;
+            text-align: center;
+            padding: 1rem;
+            z-index: 10;
+            width: 35px;
+            background-color: var.$neon-green;
+            border-radius: 100%;
+            top: 90%;
+            &:hover {
+                box-shadow:2px 2px 40px hsl(150, 100%, 66%);
+                cursor: pointer;
+            }
+        }
+
+    }
+}
