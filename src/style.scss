@@ -1,4 +1,7 @@
 @use './sass/variables' as var;
+@use './sass/mixin';
+@use './sass/animation';
+
 body {
     background-color: var.$dark-blue;
     min-height: 900px;
@@ -11,33 +14,37 @@ body {
 .main {
     .main__card {
         background-color: var.$dark-grayish-blue;
-        padding: 2rem 3rem 4rem;
+        padding: 2rem 1rem 4rem;
         text-align: center;
         position: relative;
-        margin: 0 1rem;
+        margin: 0 14px;
         border-radius: 10px;
         max-width: 500px;
+        max-height: 700px;
         .main__card-title {
             color: var.$neon-green;
-            font-size: 14px;
+            font-size: 12px;
+            font-weight: 400;
         }
         .main__card-advice {
             color: var.$light-cyan;
-            font-size: 28px;
+            font-size: 20px;
             line-height: 40px;
+            font-weight: 800;
         }
 
         .main__card-button {
             position: absolute;
-            left: 45%;
-            // right: 40%;
             text-align: center;
             padding: 1rem;
             z-index: 10;
-            width: 35px;
             background-color: var.$neon-green;
             border-radius: 100%;
-            top: 90%;
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%, -50%);
+            width: 35px;
+            height: 35px;
             &:hover {
                 box-shadow:2px 2px 40px hsl(150, 100%, 66%);
                 cursor: pointer;
@@ -45,4 +52,51 @@ body {
         }
 
     }
+
+    @include mixin.media(desktop){
+            .main__card {
+                    background-color: var.$dark-grayish-blue;
+                    padding: 2rem 3rem 4rem;
+                    text-align: center;
+                    position: relative;
+                    margin: 0 auto;
+                    border-radius: 14px;
+                    max-width: 500px;
+            
+                    .main__card-title {
+                        color: var.$neon-green;
+                        font-size: 14px;
+                        font-weight: 400;
+                        letter-spacing: 3px;
+                    }
+            
+                    .main__card-advice {
+                        color: var.$light-cyan;
+                        font-size: 28px;
+                        line-height: 40px;
+                        font-weight: 800;
+                    }
+            
+                    .main__card-button {
+                        position: absolute;
+                        text-align: center;
+                        padding: 1rem;
+                        z-index: 10;
+                        background-color: var.$neon-green;
+                        border-radius: 100%;
+                         left: 50%;
+                        top: 100%;
+                        transform: translate(-50%, -50%);
+                        width: 35px;
+                        height: 35px;
+            
+                        &:hover {
+                            box-shadow: 2px 2px 40px hsl(150, 100%, 66%);
+                            cursor: pointer;
+                        }
+                    }
+            
+                }
+    }
 }
+
