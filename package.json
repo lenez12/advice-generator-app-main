@@ -4,7 +4,7 @@
   "description": "![Design preview for the Advice generator app coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build:dev": "webpack"
   },
   "keywords": [],
   "author": "",
